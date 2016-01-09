@@ -1,0 +1,11 @@
+{
+  "name": "sockets",
+  "version": "0.0.0",
+  "description": "sockets",
+  "main": "server.js",
+  "author": "Jon",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC"
+}
