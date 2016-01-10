@@ -1,4 +1,4 @@
-﻿var PORT = process.env.port || 3000;
+﻿var PORT = process.env.PORT || 3000;
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
@@ -11,7 +11,7 @@ io.on('connection', function (socket) {
 	
 	socket.on('message', function (message) {
 		console.log('Message received: ' + message.text);
-		socket.broadcast.emit('message', message);
+		io.emit('message', message);
 	});
 
 	socket.emit('message', {
