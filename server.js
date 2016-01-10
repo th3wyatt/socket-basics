@@ -14,14 +14,11 @@ io.on('connection', function (socket) {
 	socket.on('message', function (message) {
 		message.timestamp = moment().valueOf;
 		console.log('Message received: ' + message.text);
-		io.emit('message', {
-			text: message.text,
-			timestamp: message.timestamp
-		});
-		
+		io.emit('message', message);
 	});
 
 	socket.emit('message', {
+		name: 'System',
 		text: 'Welcome to the chat application!',
 		timestamp: moment().valueOf
 	});
